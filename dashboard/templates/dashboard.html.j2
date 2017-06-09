@@ -1,0 +1,69 @@
+{% extends "base.html.j2" %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<nav class="navbar navbar-toggleable-md bg-default">
+  <div class="container">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-bar bar1"></span>
+	    <span class="navbar-toggler-bar bar2"></span>
+	    <span class="navbar-toggler-bar bar3"></span>
+ 	  </button>
+
+	  <a class="navbar-brand" href="#pablo">
+      Plant System
+	  </a>
+
+    <div class="collapse navbar-collapse" id="navigation">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="">
+            Dashboard
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-4">
+      <div class="card">
+        <img class="card-img-top img-fluid" src="http://images.all-free-download.com/images/graphicthumb/grass_sky_picture_3_165867.jpg" alt="Card image cap">
+        <div class="card-block">
+          <h4 class="card-title">Temperature</h4>
+          <p class="card-text">It is {{ current[0] | round(precision=1) }}°C</p>
+          <p class="card-text">Graph of temperature and current temperature</p>
+          <a href="#" class="btn btn-primary">How hot is it?</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card">
+        <img class="card-img-top img-fluid" src="http://images.all-free-download.com/images/graphicthumb/grass_sky_picture_3_165867.jpg" alt="Card image cap">
+        <div class="card-block">
+          <h4 class="card-title">Pressure</h4>
+          <p class="card-text">It is {{ current[1] | round(precision=1) }}mbar</p>
+          <p class="card-text">Graph of previous and current pressure</p>
+          <a href="#" class="btn btn-primary">Pressure</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card">
+        <img class="card-img-top img-fluid" src="http://www.goodwp.com/images/201301/goodwp.com_27257.jpg" alt="Card image cap">
+        <div class="card-block">
+          <h4 class="card-title">Humidity</h4>
+          <p class="card-text">It is {{ current[2] | round(precision=1) }}%</p>
+          <p class="card-text">Graph of previous and current humidity</p>
+          <a href="#" class="btn btn-primary">Humidity</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
